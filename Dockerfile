@@ -55,18 +55,18 @@ RUN git clone https://github.com/pgRouting/pgrouting.git &&\
 RUN rm -Rf pgrouting
 
 # Compile PDAL
-RUN git clone https://github.com/PDAL/PDAL.git pdal
-RUN mkdir PDAL-build
-RUN cd PDAL-build && cmake ../pdal
-RUN cd PDAL-build && make -j3 && make install
+#RUN git clone https://github.com/PDAL/PDAL.git pdal
+#RUN mkdir PDAL-build
+#RUN cd PDAL-build && cmake ../pdal
+#RUN cd PDAL-build && make -j3 && make install
 # cleanup
-RUN rm -Rf pdal && rm -Rf PDAL-build
+#RUN rm -Rf pdal && rm -Rf PDAL-build
 
 # Compile PointCloud
-RUN git clone https://github.com/pramsey/pointcloud.git
-RUN cd pointcloud && ./autogen.sh && ./configure && make -j3 && make install
+#RUN git clone https://github.com/pramsey/pointcloud.git
+#RUN cd pointcloud && ./autogen.sh && ./configure && make -j3 && make install
 # cleanup
-RUN rm -Rf pointcloud
+#RUN rm -Rf pointcloud
 
 # get compiled libraries recognized
 RUN ldconfig
